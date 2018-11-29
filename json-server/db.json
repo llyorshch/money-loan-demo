@@ -1,0 +1,98 @@
+{
+  "blacklist": [
+    {
+      "name": "Jose Luis"
+    },
+    {
+      "name": "Antonio"
+    },
+    {
+      "name": "Pedro"
+    }
+  ],
+  "loans": [
+    {
+      "name": "Julian",
+      "amount": 1000,
+      "id": 2
+    },
+    {
+      "id": 3,
+      "loanHolder": "Julián José",
+      "amount": 2000
+    },
+    {
+      "id": 4,
+      "loanHolder": "Julián José Manuel",
+      "amount": 3000
+    },
+    {
+      "loanHolder": "Julián José Manuel",
+      "amount": 3000,
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "loanHolder": "Julián José Manuel",
+      "amount": 3000,
+      "id": 7
+    },
+    {
+      "loanHolder": "Jorge Mora",
+      "amount": 1234,
+      "id": 8
+    },
+    {
+      "loanHolder": "Jose Luis P�rez L�pez",
+      "amount": 50000,
+      "id": 9
+    },
+    {
+      "loanHolder": "Jose Manuel Mart�nez Pel�ez",
+      "amount": 1500000,
+      "id": 10
+    },
+    {
+      "loanHolder": "Pedro Jes�s",
+      "amount": 35000,
+      "id": 11
+    },
+    {
+      "loanHolder": "Jose Luis L�pez V�zquez",
+      "amount": 99000,
+      "id": 12
+    },
+    {
+      "loanHolder": "Jose Luis L�pez V�zquez",
+      "amount": 99000,
+      "id": 13
+    },
+    {
+      "loanHolder": "Jose Luis L�pez V�zquez",
+      "amount": 99000,
+      "id": 14
+    },
+    {
+      "loanHolder": "Jose Luis L�pez V�zquez",
+      "amount": 99000,
+      "id": 15
+    },
+    {
+      "loanHolder": "Jose Luis L�pez V�zquez",
+      "amount": 99000,
+      "id": 16
+    },
+    {
+      "loanHolder": "Jose Luis L�pez V�zquez",
+      "amount": 99000,
+      "id": 17
+    },
+    {
+      "loanHolder": "Jose Luis L�pez V�zquez",
+      "amount": 99000,
+      "id": 18
+    }
+  ]
+}

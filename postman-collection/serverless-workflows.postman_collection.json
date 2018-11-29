@@ -1,0 +1,1049 @@
+{
+	"info": {
+		"_postman_id": "26c47c8a-d171-4b45-8468-58c499791d3d",
+		"name": "serverless-workflows",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "json-server",
+			"item": [
+				{
+					"name": "GET blacklist",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/blacklist",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"blacklist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET loans",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/loans",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"loans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET users",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "rest-admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "test",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"andres\",\n  \"firstName\": \"Andres\",\n  \"lastName\": \"del Banco\",\n  \"email\": \"no-reply@flowable.org\",\n  \"password\": \"test\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/flowable-rest/service/identity/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"flowable-rest",
+								"service",
+								"identity",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST loans",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":4,\n    \"loanHolder\": \"Julián José Manuel\",\n    \"amount\": 3000\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/loans",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"loans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT to loans",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Julian\",\n    \"amount\": 1000\n  \n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/loans/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"loans",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET groups",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "rest-admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "test",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/flowable-rest/service/identity/groups",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"flowable-rest",
+								"service",
+								"identity",
+								"groups"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Flowable REST API",
+			"item": [
+				{
+					"name": "GET process instances",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/flowable-rest/service/runtime/process-instances",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"flowable-rest",
+								"service",
+								"runtime",
+								"process-instances"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ProcessDefinitionId for \"Loan request\"",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "rest-admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "test",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/flowable-rest/service/repository/process-definitions?name=Loan%20request&latest=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"flowable-rest",
+								"service",
+								"repository",
+								"process-definitions"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Loan%20request"
+								},
+								{
+									"key": "latest",
+									"value": "true\n"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Loan Request",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "rest-admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "test",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json; charset=utf-8",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json; charset=utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"processDefinitionId\": \"process:12:d72bd7d8-eb17-11e8-8fb0-a2b109fe473a\",\n  \"variables\": [\n    {\n      \"name\": \"name\",\n      \"value\": \"Jose Manuel Martínez Peláez\"\n    },\n    {\n      \"name\": \"birthDate\",\n      \"type\": \"date\",\n      \"value\": \"1960-01-01\"\n    },\n    {\n      \"name\": \"amount\",\n      \"value\": 1500000\n    }\n  ],\n  \"returnVariables\": true\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/flowable-rest/service/runtime/process-instances",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"flowable-rest",
+								"service",
+								"runtime",
+								"process-instances"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET loanReviewers tasks",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "rest-admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "test",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/flowable-rest/service/runtime/tasks?candidateGroup=loanReviewers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"flowable-rest",
+								"service",
+								"runtime",
+								"tasks"
+							],
+							"query": [
+								{
+									"key": "candidateGroup",
+									"value": "loanReviewers"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET tasks",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "rest-admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "test",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/flowable-rest/service/runtime/tasks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"flowable-rest",
+								"service",
+								"runtime",
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET bankTellers tasks",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/flowable-rest/service/runtime/tasks?candidateGroup=bankTellers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"flowable-rest",
+								"service",
+								"runtime",
+								"tasks"
+							],
+							"query": [
+								{
+									"key": "candidateGroup",
+									"value": "bankTellers"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST claim task 4 Nuria",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"action\": \"claim\",\n  \"assignee\": \"nuria\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/flowable-rest/service/runtime/tasks/bbdcba6d-eb31-11e8-871a-a2b109fe473a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"flowable-rest",
+								"service",
+								"runtime",
+								"tasks",
+								"bbdcba6d-eb31-11e8-871a-a2b109fe473a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST complete Loan Review task",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"action\": \"complete\",\n  \"assignee\": \"nuria\",\n  \"variables\": [\n  \t{\n  \t\t\"name\": \"comments\",\n  \t\t\"value\": \"ok, accepted\"\n  \t},\n  \t{\n  \t\t\"name\": \"form_reviewLoan_outcome\",\n  \t\t\"value\": \"Accept\"\n  \t}\n  \t]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/flowable-rest/service/runtime/tasks/bbdcba6d-eb31-11e8-871a-a2b109fe473a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"flowable-rest",
+								"service",
+								"runtime",
+								"tasks",
+								"bbdcba6d-eb31-11e8-871a-a2b109fe473a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST claim task 4 Rafa",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"action\": \"claim\",\n  \"assignee\": \"rafa\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/flowable-rest/service/runtime/tasks/f1de697b-eb31-11e8-871a-a2b109fe473a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"flowable-rest",
+								"service",
+								"runtime",
+								"tasks",
+								"f1de697b-eb31-11e8-871a-a2b109fe473a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST complete Inform task",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"action\": \"complete\",\n  \"assignee\": \"rafa\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/flowable-rest/service/runtime/tasks/f1de697b-eb31-11e8-871a-a2b109fe473a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"flowable-rest",
+								"service",
+								"runtime",
+								"tasks",
+								"f1de697b-eb31-11e8-871a-a2b109fe473a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "money-loan-demo",
+			"item": [
+				{
+					"name": "POST loanapp loan request",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "test",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "rest-admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"Jose Luis López Vázquez\",\n\t\"birthDate\":\"1922-03-11\",\n\t\"amount\":99000\n}"
+						},
+						"url": {
+							"raw": "http://localhost:35000/api/loanapp/loans",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "35000",
+							"path": [
+								"api",
+								"loanapp",
+								"loans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET loanapp loanreviews",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "test",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "rest-admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:35000/api/loanapp/loanreviews",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "35000",
+							"path": [
+								"api",
+								"loanapp",
+								"loanreviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT loanapp loanreview claim",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:35000/api/loanapp/loanreviews/8e959eff-eb63-11e8-b846-a2b109fe473a?userId=nuria&action=claim",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "35000",
+							"path": [
+								"api",
+								"loanapp",
+								"loanreviews",
+								"8e959eff-eb63-11e8-b846-a2b109fe473a"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "nuria"
+								},
+								{
+									"key": "action",
+									"value": "claim"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT loanapp loanreview complete",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"comment\":\"OK\",\n\t\"loanAccepted\": true\n}"
+						},
+						"url": {
+							"raw": "http://localhost:35000/api/loanapp/loanreviews/6f5ef4a6-f28b-11e8-a43e-5e82f6953a00?userId=nuria&action=complete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "35000",
+							"path": [
+								"api",
+								"loanapp",
+								"loanreviews",
+								"6f5ef4a6-f28b-11e8-a43e-5e82f6953a00"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "nuria"
+								},
+								{
+									"key": "action",
+									"value": "complete"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET loanapp informativetasks",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "test",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "rest-admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:35000/api/loanapp/informativetasks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "35000",
+							"path": [
+								"api",
+								"loanapp",
+								"informativetasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT loanapp informative task complete",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"comment\":\"OK\",\n\t\"loanAccepted\": true\n}"
+						},
+						"url": {
+							"raw": "http://localhost:35000/api/loanapp/loanreviews/82afb80e-f28b-11e8-a43e-5e82f6953a00?userId=rafa&action=complete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "35000",
+							"path": [
+								"api",
+								"loanapp",
+								"loanreviews",
+								"82afb80e-f28b-11e8-a43e-5e82f6953a00"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "rafa"
+								},
+								{
+									"key": "action",
+									"value": "complete"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Elasticsearch",
+			"item": [
+				{
+					"name": "GET loanreviews index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:9200/loanreviews?pretty",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9200",
+							"path": [
+								"loanreviews"
+							],
+							"query": [
+								{
+									"key": "pretty",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET indices statistics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:9200/_cat/indices?v",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9200",
+							"path": [
+								"_cat",
+								"indices"
+							],
+							"query": [
+								{
+									"key": "v",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "test",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "rest-admin",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "1f4820a9-0be7-489e-9016-3552ff537d6a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "d9932340-6731-4e8e-9f61-72e168944ca5",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

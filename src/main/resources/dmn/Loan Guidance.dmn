@@ -1,0 +1,32 @@
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101" id="definition_ca6e95f9-ea9d-11e8-814d-a2b109fe473a" name="Loan Guidance" namespace="http://www.flowable.org/dmn">
+  <decision id="loanGuidance" name="Loan Guidance">
+    <decisionTable id="decisionTable_6b31c7b4-e4e8-11e8-a3e6-b2fc5f906785" hitPolicy="FIRST">
+      <input label="Birth Date">
+        <inputExpression id="inputExpression_1" typeRef="date">
+          <text>birthDate</text>
+        </inputExpression>
+      </input>
+      <output id="outputExpression_2" label="Guidande" name="guidance" typeRef="string">
+        <outputValues>
+          <text>"Gen X or older","Gen Y or younger"</text>
+        </outputValues>
+      </output>
+      <rule>
+        <inputEntry id="inputEntry_1_1">
+          <text><![CDATA[< date:toDate('1980-01-01')]]></text>
+        </inputEntry>
+        <outputEntry id="outputEntry_2_1">
+          <text><![CDATA["Gen X or older"]]></text>
+        </outputEntry>
+      </rule>
+      <rule>
+        <inputEntry id="inputEntry_1_2">
+          <text><![CDATA[>= date:toDate('1980-01-01')]]></text>
+        </inputEntry>
+        <outputEntry id="outputEntry_2_2">
+          <text><![CDATA["Gen Y or younger"]]></text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>
