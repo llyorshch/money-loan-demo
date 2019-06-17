@@ -7,14 +7,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.filter.CorsFilter;
 
 @SpringBootApplication
 public class MoneyLoanDemoApplication {
@@ -47,6 +53,17 @@ public class MoneyLoanDemoApplication {
                     .anyRequest().authenticated()
                     .and()
                     .httpBasic();
+        }
+
+        @Bean
+        public FilterRegistrationBean corsFilter() {
+           UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+           CorsConfiguration config = new CorsConfiguration().applyPermitDefaultValues();
+           config.addAllowedMethod("*");
+           source.registerCorsConfiguration("/**", config);
+           FilterRegistrationBean bean = new FilterRegistrationBean(new CorsFilter(source));
+           bean.setOrder(Ordered.HIGHEST_PRECEDENCE);
+           return bean;
         }
 	}
 	
